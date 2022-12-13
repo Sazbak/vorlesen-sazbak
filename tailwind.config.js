@@ -47,8 +47,33 @@ const typographyPlugin = plugin(
   }
 )
 
+/*TODO correct line height*/
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    colors: {
+      white: "#fff",
+      pink: "#ffb39f",
+      darkblue: "#30234a",
+      blue: "#6c8dff",
+      gray1: "#fafafa",
+      gray2: "#eee"
+    },
+    fontSize: {
+      "headline-l-600": [
+        "3.194vw",
+        { lineHeight: "52.9px", fontWeight: "600" }
+      ],
+      "paragraph-s-500": [
+        "0.902vw",
+        { lineHeight: "17.55px", fontWeight: "500" }
+      ]
+    },
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"]
+    }
+  },
   plugins: [typographyPlugin]
 }
