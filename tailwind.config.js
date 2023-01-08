@@ -54,6 +54,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     colors: {
+      black: "#000",
       white: "#fff",
       pink: "#ffb39f",
       darkblue: "#30234a",
@@ -62,17 +63,19 @@ module.exports = {
       gray2: "#eee"
     },
     fontSize: {
-      "headline-l-600": [
-        "3.194vw",
-        { lineHeight: "52.9px", fontWeight: "600" }
-      ],
-      "paragraph-s-500": [
-        "0.902vw",
-        { lineHeight: "17.55px", fontWeight: "500" }
-      ]
+      "headline-s-600": ["6.1333vw", { fontWeight: "600" }],
+      "headline-m-600": ["3.6666vw", { fontWeight: "600" }],
+      "headline-l-600": ["3.1944vw", { fontWeight: "600" }],
+      "paragraph-s-500": ["3.4666vw", { fontWeight: "500" }],
+      "paragraph-m-500": ["1.4444vw", { fontWeight: "500" }],
+      "paragraph-l-500": ["0.9027vw", { fontWeight: "500" }]
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"]
+    },
+    screens: {
+      tablet: "900px",
+      desktop: "1440px"
     }
   },
   plugins: [typographyPlugin]
