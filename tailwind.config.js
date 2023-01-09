@@ -66,9 +66,9 @@ module.exports = {
       "headline-s-600": ["6.1333vw", { fontWeight: "600" }],
       "headline-m-600": ["3.6666vw", { fontWeight: "600" }],
       "headline-l-600": ["3.1944vw", { fontWeight: "600" }],
-      "paragraph-s-500": ["3.4666vw", { fontWeight: "500" }],
-      "paragraph-m-500": ["1.4444vw", { fontWeight: "500" }],
-      "paragraph-l-500": ["0.9027vw", { fontWeight: "500" }]
+      "paragraph-s-500": ["13px", { fontWeight: "500" }],
+      "paragraph-m-500": ["15px", { fontWeight: "500" }],
+      "paragraph-l-500": ["19px", { fontWeight: "500" }]
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"]

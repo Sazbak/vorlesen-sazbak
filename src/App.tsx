@@ -41,11 +41,11 @@ function App() {
           <img src={vorlesen_text} alt="Vorlesen logo" width="97" height="16" />
         </div>
       </div>
-      <div className="flex flex-col absolute bottom-0 w-full items-center mb-[4.0133vh] tablet:mb-[5.3511vh] desktop:mb-[7.8125vh]">
+      <div className="flex flex-col absolute bottom-0 w-full items-center mb-[6.4vw] tablet:mb-[3.5555vw] desktop:mb-[5.5555vw]">
         <div className="text-center text-headline-s-600 tablet:text-headline-m-600 desktop:text-headline-l-600 text-gray1">
           Den Kindern vorlesen - egal wo du bist.
         </div>
-        <div className="flex mt-[6.8561vh] tablet:mt-[6.6889vh] desktop:mt-[3.9062vh]">
+        <div className="flex mt-[40px]">
           <img
             className="w-[35.2vw] tablet:w-[14.6666vw] desktop:w-[9.1666vw]"
             src={app_store}
@@ -57,7 +57,7 @@ function App() {
             alt="Google Play badge"
           />
         </div>
-        <div className="text-paragraph-s-500 tablet:text-paragraph-m-500 desktop:text-paragraph-l-500 text-gray1 mt-[2.8428vh] tablet:mt-[2.8428vh] desktop:mt-[1.6601vh]">
+        <div className="text-paragraph-s-500 text-gray1 mt-[16px]">
           * Produkt empfohlen für Kinder im Alter von 3-12 Jahren
         </div>
       </div>
