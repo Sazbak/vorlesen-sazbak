@@ -7,6 +7,8 @@ import startingw414 from "./assets/starting/w414starting.jpg"
 import startingw1366 from "./assets/starting/w1366starting.jpg"
 import startingw1536 from "./assets/starting/w1920starting.jpg"
 import startingw1920 from "./assets/starting/w1920starting.jpg"
+import logo from "./assets/logo.svg"
+import vorlesen_text from "./assets/vorlesen_text.svg"
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
           sizes="100vw"
           alt="Reading a tale to your kids"
         />
+      </div>
+      <div className="flex flex-col items-center w-full absolute">
+        <div className="flex gap-x-[9.65px]">
+          <img src={logo} alt="Vorlesen text" width="46" height="46" />
+          <img src={vorlesen_text} alt="Vorlesen logo" width="97" height="16" />
+        </div>
       </div>
       <div className="flex flex-col absolute bottom-0 w-full items-center mb-[4.0133vh] tablet:mb-[5.3511vh] desktop:mb-[7.8125vh]">
         <div className="text-center text-headline-s-600 tablet:text-headline-m-600 desktop:text-headline-l-600 text-gray1">
