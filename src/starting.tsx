@@ -40,7 +40,7 @@ function Starting() {
           <img src={vorlesen_text} alt="Vorlesen logo" width="97" height="16" />
         </div>
       </div>
-      <div className="flex flex-col absolute bottom-0 w-full items-center mb-[6.4vw] tablet:mb-[3.5vw] desktop:mb-[5.5vw]">
+      <div className="flex flex-col absolute bottom-0 items-center mb-[6.4vw] tablet:mb-[3.5vw] desktop:mb-[5.5vw] w-[87.2vw]  mx-auto left-0 right-0">
         <div className="text-center text-headline-s-600 tablet:text-headline-m-600 desktop:text-headline-l-600 text-gray1">
           Den Kindern vorlesen - egal wo du bist.
         </div>
