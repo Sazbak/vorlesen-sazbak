@@ -44,14 +44,14 @@ function Starting() {
         <div className="text-center text-headline-s-600 tablet:text-headline-m-600 desktop:text-headline-l-600 text-gray1">
           Den Kindern vorlesen - egal wo du bist.
         </div>
-        <div className="flex mt-[40px]">
+        <div className="flex mt-[40px] max-h-[150px]">
           <img
-            className="w-[35.2vw] tablet:w-[14.6vw] desktop:w-[9.1vw]"
+            className="w-[132px] tablet:w-[14.6vw] desktop:w-[9.1vw] "
             src={app_store}
             alt="App Store badge"
           />
           <img
-            className="w-[40vw] tablet:w-[16.6vw] desktop:w-[10.4vw]"
+            className="w-[150px] tablet:w-[16.6vw] desktop:w-[10.4vw]"
             src={google_play}
             alt="Google Play badge"
           />

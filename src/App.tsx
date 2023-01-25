@@ -3,6 +3,7 @@ import HowToUse from "./how-to-use"
 import Starting from "./starting"
 import Benefits from "./benefits"
 import FamilyPlan from "./family-plan"
+import Footer from "./footer"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <HowToUse />
       <Benefits />
       <FamilyPlan />
+      <Footer />
     </div>
   )
 }

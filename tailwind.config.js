@@ -36,7 +36,9 @@ module.exports = {
       "headline-s-600": ["23px", { fontWeight: "600" }],
       "headline-m-600": ["33px", { fontWeight: "600" }],
       "headline-l-600": ["46px", { fontWeight: "600" }],
+      "paragraph-xs-500": ["11px", { fontWeight: "500" }],
       "paragraph-s-500": ["13px", { fontWeight: "500" }],
+      "paragraph-s-700-link": ["13px", { fontWeight: "700" }],
       "paragraph-m-500": ["15px", { fontWeight: "500" }],
       "paragraph-l-500": ["19px", { fontWeight: "500" }]
     },
