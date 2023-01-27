@@ -1,7 +1,7 @@
-import ic_adventure from "./assets/holdingphone/ic_adventure.svg"
-import ic_allday from "./assets/holdingphone/ic_allday.svg"
-import ic_goodnight from "./assets/holdingphone/ic_goodnight.svg"
-import FakeButton from "./fake-button"
+import ic_adventure from "assets/holdingphone/ic_adventure.svg"
+import ic_allday from "assets/holdingphone/ic_allday.svg"
+import ic_goodnight from "assets/holdingphone/ic_goodnight.svg"
+import FakeButton from "pages/home/fake-button"
 
 function FakeButtonList() {
   return (

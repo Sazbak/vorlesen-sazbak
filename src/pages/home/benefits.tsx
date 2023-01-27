@@ -1,7 +1,7 @@
-import bearmic from "./assets/benefits/bear-mic.svg"
-import beartextbook from "./assets/benefits/bear-textbook.svg"
-import bearholdingpic from "./assets/benefits/bear-holding-pic.svg"
-import bearfamily from "./assets/benefits/bear-family.svg"
+import bearmic from "assets/benefits/bear-mic.svg"
+import beartextbook from "assets/benefits/bear-textbook.svg"
+import bearholdingpic from "assets/benefits/bear-holding-pic.svg"
+import bearfamily from "assets/benefits/bear-family.svg"
 
 function Benefits() {
   return (

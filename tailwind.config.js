@@ -33,7 +33,10 @@ module.exports = {
       gray2: "#eee"
     },
     fontSize: {
+      "headline-xs-500": ["19px", { fontWeight: "500" }],
+      "headline-s-500": ["23px", { fontWeight: "500" }],
       "headline-s-600": ["23px", { fontWeight: "600" }],
+      "headline-m-500": ["33px", { fontWeight: "500" }],
       "headline-m-600": ["33px", { fontWeight: "600" }],
       "headline-l-600": ["46px", { fontWeight: "600" }],
       "paragraph-xs-500": ["11px", { fontWeight: "500" }],

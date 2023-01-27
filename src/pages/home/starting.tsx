@@ -1,13 +1,13 @@
-import google_play from "./assets/google-play-badge.png"
-import app_store from "./assets/app-store-badge.svg"
-import startingw360 from "./assets/starting/w360starting.jpg"
-import startingw842 from "./assets/starting/w842starting.jpg"
-import startingw1171 from "./assets/starting/w1171starting.jpg"
-import startingw1438 from "./assets/starting/w1438starting.jpg"
-import startingw1811 from "./assets/starting/w1811starting.jpg"
-import startingw1920 from "./assets/starting/w1920starting.jpg"
-import logo from "./assets/logo.svg"
-import vorlesen_text from "./assets/vorlesen_text.svg"
+import google_play from "assets/google-play-badge.png"
+import app_store from "assets/app-store-badge.svg"
+import startingw360 from "assets/starting/w360starting.jpg"
+import startingw842 from "assets/starting/w842starting.jpg"
+import startingw1171 from "assets/starting/w1171starting.jpg"
+import startingw1438 from "assets/starting/w1438starting.jpg"
+import startingw1811 from "assets/starting/w1811starting.jpg"
+import startingw1920 from "assets/starting/w1920starting.jpg"
+import logo from "assets/logo.svg"
+import vorlesen_text from "assets/vorlesen_text.svg"
 
 function Starting() {
   return (
