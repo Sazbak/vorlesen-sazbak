@@ -1,13 +1,13 @@
 import Header from "components/header"
 import Footer from "components/footer"
 
-function Imprint() {
+function PrivacyPolicy() {
   return (
     <div className="flex flex-col bg-gray1 text-darkblue text-start">
       <Header />
       <div className="flex flex-col items-start mt-[40px] tablet:mt-[56px] mx-[24px] tablet:mx-[232px] desktop:mx-[370px]">
         <div className="text-headline-m-600 desktop:text-headline-l-600">
-          Imprint
+          Privacy policy
         </div>
         <div className="text-paragraph-s-400 mt-[8px]">Updated 15 Jan 2023</div>
 
@@ -72,4 +72,4 @@ function Imprint() {
   )
 }
 
-export default Imprint
+export default PrivacyPolicy

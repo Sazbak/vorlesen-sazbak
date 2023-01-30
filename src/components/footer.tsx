@@ -37,12 +37,12 @@ function Footer() {
             <Link className="text-paragraph-s-700-link underline " to="imprint">
               Imprint
             </Link>
-            <a
-              className="text-paragraph-s-700-link underline  "
-              href="https://www.w3schools.com/"
+            <Link
+              className="text-paragraph-s-700-link underline "
+              to="privacypolicy"
             >
               Privacy Policy
-            </a>
+            </Link>
             <a
               className="text-paragraph-s-700-link underline  "
               href="https://www.w3schools.com/"

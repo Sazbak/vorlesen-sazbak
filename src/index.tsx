@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client"
 import App from "pages/home/App"
 import About from "pages/about/about"
 import Imprint from "pages/imprint/imprint"
+import PrivacyPolicy from "pages/privacy-policy/privacy-policy"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/imprint",
     element: <Imprint />
+  },
+  {
+    path: "/privacypolicy",
+    element: <PrivacyPolicy />
   }
 ])
 
