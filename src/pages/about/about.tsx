@@ -1,15 +1,12 @@
 import logo from "assets/logo.svg"
-import vorlesen_text from "assets/vorlesen_text.svg"
 import TeamMemberList from "./team-member-list"
-import Footer from "pages/home/footer"
+import Footer from "components/footer"
+import Header from "components/header"
 
 function About() {
   return (
     <div className="flex flex-col items-center">
-      <div className="flex gap-x-[9.65px] bg-darkblue h-[82px] justify-center w-full">
-        <img src={logo} alt="Vorlesen text" width="46" height="46" />
-        <img src={vorlesen_text} alt="Vorlesen logo" width="97" height="16" />
-      </div>
+      <Header />
       <div className="bg-gray1 w-full flex justify-center">
         <div className="flex flex-col w-[327px] tablet:w-[772px] desktop:w-[700px] items-center mt-[40px] tablet:mt-[56px]">
           <div className="text-headline-m-600 desktop:text-headline-l-600 text-darkblue text-center">

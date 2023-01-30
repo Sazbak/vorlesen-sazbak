@@ -3,7 +3,7 @@ import HowToUse from "./how-to-use"
 import Starting from "./starting"
 import Benefits from "./benefits"
 import FamilyPlan from "./family-plan"
-import Footer from "./footer"
+import Footer from "../../components/footer"
 
 function App() {
   return (

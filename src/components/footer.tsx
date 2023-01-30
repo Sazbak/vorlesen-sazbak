@@ -34,12 +34,9 @@ function Footer() {
             >
               FAQ
             </a>
-            <a
-              className="text-paragraph-s-700-link underline "
-              href="https://www.w3schools.com/"
-            >
+            <Link className="text-paragraph-s-700-link underline " to="imprint">
               Imprint
-            </a>
+            </Link>
             <a
               className="text-paragraph-s-700-link underline  "
               href="https://www.w3schools.com/"

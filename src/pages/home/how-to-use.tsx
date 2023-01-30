@@ -132,7 +132,7 @@ function HowToUse() {
         />
       </div>
       <div className="bg-darkblue flex flex-col items-center pb-[10.6vw]">
-        <div className="text-headline-m-600 text-white text-center mt-[10.6vw] mx-[6.4vw] tablet:mt-[7.1vw]">
+        <div className="text-headline-m-600 text-white text-center mt-[10.6vw] mx-[6.4vw] tablet:mt-[7.1vw] desktop:mt-[64px]">
           Your kids start to listen
         </div>
         <div className="text-paragraph-m-500 text-white text-center mx-[6.4vw] mt-[8px]">
