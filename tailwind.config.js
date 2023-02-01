@@ -53,6 +53,11 @@ module.exports = {
     screens: {
       tablet: "900px",
       desktop: "1440px"
+    },
+    extend: {
+      transitionProperty: {
+        "max-height": "max-height"
+      }
     }
   },
   plugins: [typographyPlugin]

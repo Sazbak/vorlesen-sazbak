@@ -28,12 +28,9 @@ function Footer() {
             © 2022 Vorlesen. All rights reserved.
           </div>
           <div className="flex gap-[8px] mt-[16px] tablet:mt-0 justify-center">
-            <a
-              className="text-paragraph-s-700-link underline  "
-              href="https://www.w3schools.com/"
-            >
+            <Link className="text-paragraph-s-700-link underline " to="faq">
               FAQ
-            </a>
+            </Link>
             <Link className="text-paragraph-s-700-link underline " to="imprint">
               Imprint
             </Link>
