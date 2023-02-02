@@ -13,19 +13,19 @@ const router = createBrowserRouter([
     element: <App />
   },
   {
-    path: "/about",
+    path: "about",
     element: <About />
   },
   {
-    path: "/imprint",
+    path: "imprint",
     element: <Imprint />
   },
   {
-    path: "/privacypolicy",
+    path: "privacypolicy",
     element: <PrivacyPolicy />
   },
   {
-    path: "/faq",
+    path: "faq",
     element: (
       <FAQ
         faqElements={[

@@ -8,7 +8,7 @@ export type FaqSubElementProps = {
   content: string
 }
 
-export const FaqDropdownElement: FC<FaqSubElementProps> = ({ ...props }) => {
+export const FaqDropdownElement: FC<FaqSubElementProps> = (props) => {
   const [open, setOpen] = useState(false)
 
   return (

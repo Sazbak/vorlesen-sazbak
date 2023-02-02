@@ -11,10 +11,10 @@ export type FaqProps = {
   }[]
 }
 
-const Faq: FC<FaqProps> = ({ ...props }) => {
+const Faq: FC<FaqProps> = (props) => {
   const listLayout = (
     <>
-      {props.faqElements.map((element, index) => (
+      {props.faqElements.map((element) => (
         <>
           <div className="text-headline-s-600 pb-[10px]">
             {element.headline}

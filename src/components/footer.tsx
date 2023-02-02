@@ -28,15 +28,18 @@ function Footer() {
             © 2022 Vorlesen. All rights reserved.
           </div>
           <div className="flex gap-[8px] mt-[16px] tablet:mt-0 justify-center">
-            <Link className="text-paragraph-s-700-link underline " to="faq">
+            <Link className="text-paragraph-s-700-link underline " to="/faq">
               FAQ
             </Link>
-            <Link className="text-paragraph-s-700-link underline " to="imprint">
+            <Link
+              className="text-paragraph-s-700-link underline "
+              to="/imprint"
+            >
               Imprint
             </Link>
             <Link
               className="text-paragraph-s-700-link underline "
-              to="privacypolicy"
+              to="/privacypolicy"
             >
               Privacy Policy
             </Link>
@@ -46,7 +49,7 @@ function Footer() {
             >
               Contact
             </a>
-            <Link className="text-paragraph-s-700-link underline " to="about">
+            <Link className="text-paragraph-s-700-link underline " to="/about">
               About
             </Link>
           </div>
