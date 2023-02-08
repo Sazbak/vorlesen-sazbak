@@ -57,6 +57,15 @@ module.exports = {
     extend: {
       transitionProperty: {
         "max-height": "max-height"
+      },
+      keyframes: () => ({
+        fadeInUp: {
+          "0%": { opacity: 0, top: 200 },
+          "100%": { opacity: 1, top: 0 }
+        }
+      }),
+      animation: {
+        fadeInUp: "fadeInUp 1s linear forwards"
       }
     }
   },

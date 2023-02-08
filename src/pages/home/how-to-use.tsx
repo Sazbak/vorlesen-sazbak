@@ -12,8 +12,44 @@ import phone3 from "assets/howtouse/phone3.png"
 import postbear from "assets/howtouse/postbear.svg"
 import kidsreadingtale from "assets/howtouse/kidsreadingtale.png"
 import FakeButtonList from "pages/home/fake-button-list"
+import React, { useEffect } from "react"
 
 function HowToUse() {
+  useEffect(() => {
+    const animatedCollection = document.getElementsByClassName("animated")
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px",
+      threshold: 0
+    }
+
+    function handleIntersect(
+      entries: IntersectionObserverEntry[],
+      observer: IntersectionObserver
+    ) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const classList = entry.target.classList
+          if (classList.contains("delayed-animation")) {
+            classList.add("opacity-0")
+            setTimeout(() => classList.add("animate-fadeInUp"), 1000)
+          } else {
+            classList.add("animate-fadeInUp")
+          }
+
+          observer.unobserve(entry.target)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions)
+
+    for (let i = 0; i < animatedCollection.length; i++) {
+      observer.observe(animatedCollection[i])
+    }
+  })
+
   return (
     <>
       <div className="w-full bg-white">
@@ -25,19 +61,23 @@ function HowToUse() {
       <div className="w-full">
         <div className="bg-blue overflow-hidden relative desktop:mx-[5.5vw] ">
           <div className="flex flex-col tablet:flex-row-reverse justify-center items-center tablet:items-start tablet:ml-[4.8vw] desktop:ml-[10.9vw] ">
-            <div className="flex flex-col w-[87.2vw] tablet:w-[41.2vw] justify-start mt-[10.6vw] tablet:mt-[14.2vw] desktop:mt-[4.4vw]  desktop:ml-[2vw]">
-              <div className="text-center tablet:text-left text-white text-headline-m-600 tablet:text-headline-l-600">
+            <div className="flex flex-col w-[87.2vw] tablet:w-[41.2vw] justify-start mt-[10.6vw] tablet:mt-[14.2vw] desktop:mt-[4.4vw]  desktop:ml-[2vw] ">
+              <div className="text-center tablet:text-left text-white text-headline-m-600 tablet:text-headline-l-600 animated relative delayed-animation">
                 Geschichte wählen
               </div>
-              <div className="text-center tablet:text-left text-gray2 text-paragraph-m-500 desktop:text-paragraph-l-500 mb-[10.6vw] tablet:mb-[7.1vw] desktop:mb-[3.8vw] desktop:w-[24.3vw]">
+              <div className="text-center tablet:text-left text-gray2 text-paragraph-m-500 desktop:text-paragraph-l-500 mb-[10.6vw] tablet:mb-[7.1vw] desktop:mb-[3.8vw] desktop:w-[24.3vw] animated relative delayed-animation">
                 Öffne die App und wähle eine Geschichte aus unserem
                 Geschichten-Katalog oder wähle dein eigenes Lieblingsbuch.
               </div>
-              <div className="hidden tablet:block">
+              <div className="hidden tablet:block animated relative">
                 <FakeButtonList />
               </div>
             </div>
-            <picture className="mt-[3.8vw] tablet:mt-[4.4vw] desktop:mt-[3.8vw]">
+            <picture
+              className={
+                "mt-[3.8vw] tablet:mt-[4.4vw] desktop:mt-[3.8vw] animated relative"
+              }
+            >
               <source
                 media="(min-width: 900px)"
                 srcSet={
@@ -77,8 +117,10 @@ function HowToUse() {
                 alt="Holding a phone in hand"
               />
             </picture>
-            <div className="tablet:hidden absolute bottom-0 mb-[10vw]">
-              <FakeButtonList />
+            <div className="absolute bottom-0 tablet:hidden">
+              <div className="relative animated">
+                <FakeButtonList />
+              </div>
             </div>
           </div>
         </div>
