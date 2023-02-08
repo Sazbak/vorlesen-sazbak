@@ -1,10 +1,5 @@
-import holdingphonew360 from "assets/howtouse/w360holdingphone.png"
-import holdingphonew579 from "assets/howtouse/w579holdingphone.png"
-import holdingphonew753 from "assets/howtouse/w753holdingphone.png"
-import holdingphonew813 from "assets/howtouse/w813holdingphone.png"
-import holdingphonefullw375 from "assets/howtouse/w375holdingphonefull.png"
-import holdingphonefullw729 from "assets/howtouse/w729holdingphonefull.png"
-import holdingphonefullw899 from "assets/howtouse/w899holdingphonefull.png"
+import holdingphone from "assets/howtouse/holdingphone.png"
+import holdingphonefull from "assets/howtouse/holdingphonefull.png"
 import holdingphonesidecropped from "assets/howtouse/holdingphonesidecropped.png"
 import phone2 from "assets/howtouse/phone2.png"
 import record from "assets/howtouse/record.png"
@@ -12,7 +7,7 @@ import phone3 from "assets/howtouse/phone3.png"
 import postbear from "assets/howtouse/postbear.svg"
 import kidsreadingtale from "assets/howtouse/kidsreadingtale.png"
 import FakeButtonList from "pages/home/fake-button-list"
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 
 function HowToUse() {
   useEffect(() => {
@@ -53,71 +48,41 @@ function HowToUse() {
   return (
     <>
       <div className="w-full bg-white">
-        <div className=" mx-auto text-center text-paragraph-l-500 text-blue my-[10.6vw] tablet:my-[6.2vw] desktop:my-[5.5vw] w-[87.2vw] tablet:w-[85.7vw] desktop:w-[43.3vw]">
+        <div className="mx-auto text-center text-paragraph-l-500 text-blue my-[40px] tablet:my-[56px] desktop:my-[80px] w-[87.2vw] tablet:w-[85.7vw] desktop:w-[43.3vw] ">
           Mit unserer benutzerfreundlichen und intuitiven Benutzeroberfläche
           musst du einfach nur folgendes tun:
         </div>
       </div>
       <div className="w-full">
-        <div className="bg-blue overflow-hidden relative desktop:mx-[5.5vw] ">
-          <div className="flex flex-col tablet:flex-row-reverse justify-center items-center tablet:items-start tablet:ml-[4.8vw] desktop:ml-[10.9vw] ">
-            <div className="flex flex-col w-[87.2vw] tablet:w-[41.2vw] justify-start mt-[10.6vw] tablet:mt-[14.2vw] desktop:mt-[4.4vw]  desktop:ml-[2vw] ">
+        <div className="bg-blue relative desktop:mx-[80px] tablet:h-[604px] desktop:h-[700px] flex justify-center">
+          <div className="flex flex-col tablet:flex-row-reverse justify-center items-end  h-full">
+            <div className="flex flex-col mt-[40px] tablet:mt-[0px] desktop:mt-[40px] desktop:ml-[2vw] mx-[14px] tablet:mx-[0px] tablet:w-[400px] desktop:w-[500px] self-center">
               <div className="text-center tablet:text-left text-white text-headline-m-600 tablet:text-headline-l-600 animated relative delayed-animation">
                 Geschichte wählen
               </div>
-              <div className="text-center tablet:text-left text-gray2 text-paragraph-m-500 desktop:text-paragraph-l-500 mb-[10.6vw] tablet:mb-[7.1vw] desktop:mb-[3.8vw] desktop:w-[24.3vw] animated relative delayed-animation">
-                Öffne die App und wähle eine Geschichte aus unserem
-                Geschichten-Katalog oder wähle dein eigenes Lieblingsbuch.
+              <div className="text-center tablet:text-left text-gray2 text-paragraph-m-500 desktop:text-paragraph-l-500 mb-[40px] tablet:mb-[64px] desktop:mb-[56px] desktop:w-[24.3vw] animated relative delayed-animation">
+                Open the app, and select a story from our own catalog, or add
+                your own.
               </div>
               <div className="hidden tablet:block animated relative">
                 <FakeButtonList />
               </div>
             </div>
-            <picture
-              className={
-                "mt-[3.8vw] tablet:mt-[4.4vw] desktop:mt-[3.8vw] animated relative"
-              }
-            >
-              <source
-                media="(min-width: 900px)"
-                srcSet={
-                  holdingphonew360 +
-                  " 360w,\n" +
-                  holdingphonew579 +
-                  " 579w,\n" +
-                  holdingphonew753 +
-                  " 753w,\n" +
-                  holdingphonew813 +
-                  " 813w"
-                }
-                sizes="
-                (min-width: 900px) 48.6vw,
-                (min-width: 1440px) 34.2vw,
-                34.2vw"
-              />
-              <source
-                media="(min-width: 637px)"
-                srcSet={
-                  holdingphonefullw375 +
-                  " 375w,\n" +
-                  holdingphonefullw729 +
-                  " 729w,\n" +
-                  holdingphonefullw899 +
-                  " 899w"
-                }
-              />
+            <picture className="animated relative">
+              <source media="(min-width: 900px)" srcSet={holdingphone} />
+              <source media="(min-width: 637px)" srcSet={holdingphonefull} />
               <source
                 className="bg-cover tablet:bg-auto"
                 media="(min-width: 375px)"
                 src={holdingphonesidecropped}
               />
               <img
-                className="object-contain w-screen tablet:w-auto desktop:h-full desktop:w-auto"
+                className="w-screen tablet:w-auto"
                 src={holdingphonesidecropped}
                 alt="Holding a phone in hand"
               />
             </picture>
-            <div className="absolute bottom-0 tablet:hidden">
+            <div className="absolute bottom-0 tablet:hidden left-0 right-0 flex justify-center mx-[14px]">
               <div className="relative animated">
                 <FakeButtonList />
               </div>

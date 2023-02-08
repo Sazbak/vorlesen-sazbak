@@ -7,10 +7,10 @@ function FakeButtonList() {
   return (
     <>
       <FakeButton title="Abenteuer Geschichten" ic_src={ic_adventure} />
-      <div className="ml-[6.9vw]">
+      <div className="ml-[80px]">
         <FakeButton title="Alltags Geschichten" ic_src={ic_allday} />
       </div>
-      <div className="ml-[13.8vw]">
+      <div className="ml-[160px]">
         <FakeButton title="Gute Nacht Geschichten" ic_src={ic_goodnight} />
       </div>
     </>
