@@ -34,7 +34,7 @@ function Starting() {
           alt="Reading a tale to your kids"
         />
       </div>
-      <div className="flex flex-col items-center w-full absolute">
+      <div className="flex flex-col items-center w-full absolute top-[17px] desktop:top-[23px]">
         <div className="flex gap-x-[9.65px]">
           <img src={logo} alt="Vorlesen text" width="46" height="46" />
           <img src={vorlesen_text} alt="Vorlesen logo" width="97" height="16" />
