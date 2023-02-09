@@ -77,7 +77,7 @@ function HowToUse() {
                 src={holdingphonesidecropped}
               />
               <img
-                className="w-screen tablet:w-auto"
+                className="w-screen min-[637px]:w-auto"
                 src={holdingphonesidecropped}
                 alt="Holding a phone in hand"
               />
@@ -100,7 +100,7 @@ function HowToUse() {
           </div>
         </div>
         <img
-          className="mt-[6.4vw] tablet:w-[300px] mx-[10vw] tablet:mx-[0px]"
+          className="mt-[6.4vw] tablet:w-[300px] mx-[10vw] tablet:mx-[0px] relative desktop:bottom-[9vw]"
           src={phone2}
           alt="Phone screen"
         />
