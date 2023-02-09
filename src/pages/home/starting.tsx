@@ -1,11 +1,5 @@
 import google_play from "assets/google-play-badge.png"
 import app_store from "assets/app-store-badge.svg"
-import startingw360 from "assets/starting/w360starting.jpg"
-import startingw842 from "assets/starting/w842starting.jpg"
-import startingw1171 from "assets/starting/w1171starting.jpg"
-import startingw1438 from "assets/starting/w1438starting.jpg"
-import startingw1811 from "assets/starting/w1811starting.jpg"
-import startingw1920 from "assets/starting/w1920starting.jpg"
 import logo from "assets/logo.svg"
 import vorlesen_text from "assets/vorlesen_text.svg"
 
@@ -13,26 +7,7 @@ function Starting() {
   return (
     <>
       <div className="bg-black/50">
-        <img
-          className="w-screen h-screen object-cover mix-blend-overlay"
-          src={startingw1920}
-          srcSet={
-            startingw360 +
-            " 360w,\n" +
-            startingw842 +
-            " 842w,\n" +
-            startingw1171 +
-            " 1171w,\n" +
-            startingw1438 +
-            " 1438w,\n" +
-            startingw1811 +
-            " 1811w,\n" +
-            startingw1920 +
-            " 1920w"
-          }
-          sizes="100vw"
-          alt="Reading a tale to your kids"
-        />
+        <div className="w-screen h-screen bg-[url('assets/starting/starting.png')] mix-blend-overlay bg-cover bg-center bg-fixed bg-no-repeat" />
       </div>
       <div className="flex flex-col items-center w-full absolute top-[17px] desktop:top-[23px]">
         <div className="flex gap-x-[9.65px]">
