@@ -1,6 +1,4 @@
-// export const tabletWidth = "900px"
-// export const desktopWidth = "1440px"
-
+const constants = require("./constants")
 const plugin = require("tailwindcss/plugin")
 
 const typographyPlugin = plugin(({ addUtilities, e, theme }) => {
@@ -54,8 +52,8 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"]
     },
     screens: {
-      tablet: "900px",
-      desktop: "1440px"
+      tablet: constants.tabletWidth,
+      desktop: constants.desktopWidth
     },
     extend: {
       transitionProperty: {
