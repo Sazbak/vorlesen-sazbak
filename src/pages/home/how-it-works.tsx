@@ -3,7 +3,7 @@ import bearwithcub from "assets/howitworks/bearwithcub.svg"
 
 function HowItWorks() {
   return (
-    <div className="bg-gray2 flex flex-col px-[24px] tablet:px-[138px] desktop:px-[264px] items-center">
+    <div className="bg-gray2 flex flex-col px-[24px] tablet:px-[138px] desktop:px-[264px] items-center w-screen overflow-x-hidden">
       <div className="text-headline-s-600 desktop:text-headline-l-600 text-darkblue text-center my-[40px]">
         See how it works
       </div>

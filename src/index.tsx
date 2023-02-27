@@ -70,7 +70,3 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 )
-
-// "Sed porttitor curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh.",
-// "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat.",
-// "Sed porttitor curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh."

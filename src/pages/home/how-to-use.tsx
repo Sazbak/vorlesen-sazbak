@@ -47,7 +47,7 @@ function HowToUse() {
 
   return (
     <>
-      <div className="w-full bg-white">
+      <div className="w-screen bg-white overflow-x-hidden">
         <div className="mx-auto text-center text-paragraph-l-500 text-blue my-[40px] tablet:my-[56px] desktop:my-[80px] w-[87.2vw] tablet:w-[85.7vw] desktop:w-[43.3vw] ">
           Mit unserer benutzerfreundlichen und intuitiven Benutzeroberfläche
           musst du einfach nur folgendes tun:

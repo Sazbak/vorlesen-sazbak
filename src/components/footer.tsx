@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 function Footer() {
   return (
-    <div className="flex flex-col tablet:flex-row tablet:justify-center bg-white mx-auto max-w-[85vw] text-darkblue">
+    <div className="flex flex-col tablet:flex-row tablet:justify-center bg-white mx-auto max-w-[85vw] text-darkblue w-screen overflow-x-hidden">
       <div className="flex items-center justify-center mt-[24px] tablet:mt-0 tablet:mr-[200px] ">
         <img className="mr-[16px] w-[70px] h-[70px]" src={logo} alt="logo" />
         <div className="text-headline-s-600 text-center">Hol dir die App</div>
@@ -44,7 +44,7 @@ function Footer() {
               Privacy Policy
             </Link>
             <a
-              className="text-paragraph-s-700-link underline  "
+              className="text-paragraph-s-700-link underline"
               href="https://www.w3schools.com/"
             >
               Contact

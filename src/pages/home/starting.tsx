@@ -5,7 +5,7 @@ import vorlesen_text from "assets/vorlesen_text.svg"
 
 function Starting() {
   return (
-    <>
+    <div className="w-screen overflow-x-hidden">
       <div className="bg-black/50">
         <div className="w-screen h-screen bg-[url('assets/starting/starting.png')] mix-blend-overlay bg-cover bg-center bg-fixed bg-no-repeat" />
       </div>
@@ -35,7 +35,7 @@ function Starting() {
           * Produkt empfohlen für Kinder im Alter von 3-12 Jahren
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

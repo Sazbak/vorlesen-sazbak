@@ -2,7 +2,7 @@ import stamp from "assets/familyplan/stamp.svg"
 
 function FamilyPlan() {
   return (
-    <div className="relative text-center">
+    <div className="relative text-center w-screen overflow-x-hidden">
       <div className="bg-black/50">
         <div className="w-screen h-screen bg-[url('assets/starting/starting.png')] mix-blend-overlay bg-cover bg-center bg-no-repeat" />
       </div>

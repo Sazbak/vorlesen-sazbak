@@ -5,7 +5,7 @@ import bearfamily from "assets/benefits/bear-family.svg"
 
 function Benefits() {
   return (
-    <div className="bg-gray2 py-[10.6vw] text-darkblue text-center tablet:text-start">
+    <div className="bg-gray2 py-[10.6vw] text-darkblue text-center tablet:text-start w-screen overflow-x-hidden">
       <div className="flex flex-col max-w-[87.2vw] items-center mx-auto">
         <div className="text-headline-m-600 tablet:text-headline-l-600">
           Benefits
