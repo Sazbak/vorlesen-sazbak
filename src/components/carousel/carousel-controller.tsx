@@ -20,7 +20,9 @@ const CarouselController: FC<Props> = (props) => {
   const cardWidth = useRef(0)
   const cardGapX = useRef(0)
   const cardScrollPositions = useRef([0])
+  const cardSnapPortBounds = useRef([0])
   const activeCardIndex = useRef(0)
+  const snapDelay = 100
 
   const scrollCards = useCallback(
     (direction: Direction) => {
@@ -44,22 +46,66 @@ const CarouselController: FC<Props> = (props) => {
   )
 
   useEffect(() => {
-    cardWidth.current = (
-      props.carousel.current!.children.item(0)! as HTMLElement
-    ).offsetWidth
-    if (props.carousel.current !== null) {
+    const carousel = props.carousel.current!
+    cardWidth.current = (carousel.children.item(0)! as HTMLElement).offsetWidth
+    if (carousel !== null) {
       cardGapX.current = parseFloat(
-        window.getComputedStyle(props.carousel.current).gap.match(/\d+/)?.[0] ??
-          "0px"
+        window.getComputedStyle(carousel).gap.match(/\d+/)?.[0] ?? "0px"
       )
-      console.log("cardwidth: " + cardWidth.current)
-      console.log("gapX: " + cardGapX.current)
     }
 
     cardScrollPositions.current = Array.from(
       { length: props.cardNumber },
       (_, index) => index * (1 + cardWidth.current + cardGapX.current)
     )
+
+    cardSnapPortBounds.current = Array.from(
+      { length: props.cardNumber },
+      (_, index) => cardScrollPositions.current[index] - cardWidth.current / 2
+    )
+
+    let timeout: ReturnType<typeof setTimeout>
+
+    const handleScroll = () => {
+      clearTimeout(timeout)
+      if (
+        carousel.scrollLeft >
+        cardSnapPortBounds.current[activeCardIndex.current + 1]
+      ) {
+        timeout = setTimeout(() => {
+          props.carousel.current?.scrollTo(
+            cardScrollPositions.current[activeCardIndex.current + 1],
+            0
+          )
+        }, snapDelay)
+        activeCardIndex.current++
+      } else if (
+        carousel.scrollLeft <
+        cardSnapPortBounds.current[activeCardIndex.current]
+      ) {
+        timeout = setTimeout(() => {
+          props.carousel.current?.scrollTo(
+            cardScrollPositions.current[activeCardIndex.current - 1],
+            0
+          )
+        }, snapDelay)
+        activeCardIndex.current--
+      } else {
+        timeout = setTimeout(() => {
+          carousel.scrollTo(
+            cardScrollPositions.current[activeCardIndex.current],
+            0
+          )
+        }, snapDelay)
+      }
+      console.log(activeCardIndex)
+    }
+
+    props.carousel.current?.addEventListener("scroll", handleScroll)
+
+    return () => {
+      props.carousel.current?.removeEventListener("scroll", handleScroll)
+    }
   }, [props.carousel, props.cardNumber])
 
   return (
