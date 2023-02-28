@@ -15,7 +15,7 @@ const Carousel: FC<Props> = (props) => {
   return (
     <div className="flex flex-col">
       <div
-        className={`flex gap-x-[16px] tablet:gap-x-[32px] desktop:gap-x-[40px] overflow-x-auto scrollbar-hide scroll-smooth`}
+        className="flex gap-x-[16px] tablet:gap-x-[32px] desktop:gap-x-[40px] overflow-x-auto scrollbar-hide scroll-smooth px-[calc(50vw-160px)] tablet:px-[calc(50vw-185px)] desktop:px-[calc(50vw-284px)]"
         ref={carouselRef}
       >
         {cards.map((card, index) => (

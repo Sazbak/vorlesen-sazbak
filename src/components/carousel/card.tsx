@@ -16,6 +16,7 @@ const Card: FC<CardProps> = (props) => {
   })
 
   return (
+    //in case of card width change, change left padding of carousel flex layout inside carousel.tsx as well
     <div className="flex flex-col bg-white text-start text-darkblue border border-blue rounded-[14px] shrink-0 w-[320px] tablet:w-[370px] desktop:w-[568px] h-[299px] relative px-[16px]">
       <div className="text-headline-s-600 mt-[24px] mb-[8px]">
         {props.title}
