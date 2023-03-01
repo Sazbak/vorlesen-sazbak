@@ -18,6 +18,7 @@ const Carousel: FC<Props> = (props) => {
   const cardSnapPortBounds = useRef([0])
   const activeCardIndex = useRef(0)
   const snapDelay = 100
+  const controllerIndexUpdater = useRef((index: number) => {})
 
   const scrollCards = useCallback(
     (direction: Direction) => {
@@ -74,6 +75,7 @@ const Carousel: FC<Props> = (props) => {
           )
         }, snapDelay)
         activeCardIndex.current++
+        controllerIndexUpdater.current(activeCardIndex.current)
       } else if (
         carousel.scrollLeft <
         cardSnapPortBounds.current[activeCardIndex.current]
@@ -85,6 +87,7 @@ const Carousel: FC<Props> = (props) => {
           )
         }, snapDelay)
         activeCardIndex.current--
+        controllerIndexUpdater.current(activeCardIndex.current)
       } else {
         timeout = setTimeout(() => {
           carousel.scrollTo(
@@ -93,7 +96,6 @@ const Carousel: FC<Props> = (props) => {
           )
         }, snapDelay)
       }
-      console.log(activeCardIndex)
     }
 
     carousel.addEventListener("scroll", handleScroll)
@@ -124,6 +126,7 @@ const Carousel: FC<Props> = (props) => {
         cardNumber={cards.length}
         selectedIndex={activeCardIndex.current}
         scrollCards={scrollCards}
+        updater={controllerIndexUpdater}
       />
     </div>
   )
