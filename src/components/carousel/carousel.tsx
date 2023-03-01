@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import { FC } from "react"
 import Card from "./card"
 import { CardProps } from "./card"
@@ -19,6 +19,7 @@ const Carousel: FC<Props> = (props) => {
   const activeCardIndex = useRef(0)
   const snapDelay = 100
   const controllerIndexUpdater = useRef((index: number) => {})
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
   const scrollCards = useCallback(
     (direction: Direction) => {
@@ -42,6 +43,8 @@ const Carousel: FC<Props> = (props) => {
   )
 
   useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth)
+    window.addEventListener("resize", handleResize)
     const carousel = carouselRef.current! as HTMLElement
     cardWidth.current = (carousel.children.item(0)! as HTMLElement).offsetWidth
     if (carousel !== null) {
@@ -59,6 +62,8 @@ const Carousel: FC<Props> = (props) => {
       { length: cards.length },
       (_, index) => cardScrollPositions.current[index] - cardWidth.current / 2
     )
+
+    carousel.scrollTo(cardScrollPositions.current[activeCardIndex.current], 0)
 
     let timeout: ReturnType<typeof setTimeout>
 
@@ -102,8 +107,9 @@ const Carousel: FC<Props> = (props) => {
 
     return () => {
       carousel.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("resize", handleResize)
     }
-  }, [cards.length])
+  }, [cards.length, screenWidth])
 
   return (
     <div className="flex flex-col">
