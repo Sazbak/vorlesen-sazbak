@@ -1,16 +1,20 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import { FC } from "react"
 import Card from "./card"
-import { CardProps } from "./card"
 import CarouselController from "./carousel-controller"
 import { Direction } from "./carousel-controller"
 
 type Props = {
-  cards: CardProps[]
+  cards: {
+    title: string
+    message: string
+    name: string
+    rating: number
+    date: Date
+  }[]
 }
 
 const Carousel: FC<Props> = (props) => {
-  const cards = props.cards
   const carouselRef = useRef(null)
   const cardWidth = useRef(0)
   const cardGapX = useRef(0)
@@ -20,13 +24,18 @@ const Carousel: FC<Props> = (props) => {
   const snapDelay = 100
   const controllerIndexUpdater = useRef((index: number) => {})
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const cardOpacityUpdaters = Array(props.cards.length).fill(null)
+
+  for (let i = 0; i < props.cards.length; i++) {
+    cardOpacityUpdaters[i] = { update: (isActive: boolean) => {} }
+  }
 
   const scrollCards = useCallback(
     (direction: Direction) => {
       if (carouselRef.current) {
         if (direction === Direction.Forward) {
           activeCardIndex.current = Math.min(
-            cards.length - 1,
+            props.cards.length - 1,
             activeCardIndex.current + 1
           )
         } else {
@@ -39,7 +48,7 @@ const Carousel: FC<Props> = (props) => {
         )
       }
     },
-    [cards.length]
+    [props.cards.length]
   )
 
   useEffect(() => {
@@ -54,12 +63,12 @@ const Carousel: FC<Props> = (props) => {
     }
 
     cardScrollPositions.current = Array.from(
-      { length: cards.length },
+      { length: props.cards.length },
       (_, index) => index * (1 + cardWidth.current + cardGapX.current)
     )
 
     cardSnapPortBounds.current = Array.from(
-      { length: cards.length },
+      { length: props.cards.length },
       (_, index) => cardScrollPositions.current[index] - cardWidth.current / 2
     )
 
@@ -67,18 +76,22 @@ const Carousel: FC<Props> = (props) => {
 
     let timeout: ReturnType<typeof setTimeout>
 
-    const handleScroll = () => {
+    const handleSnap = () => {
       clearTimeout(timeout)
       if (
         carousel.scrollLeft >
         cardSnapPortBounds.current[activeCardIndex.current + 1]
       ) {
         timeout = setTimeout(() => {
+          //in order to handle the potential edge case of the scroll value passing a boundary on the last frame of stopping
           carousel.scrollTo(
-            cardScrollPositions.current[activeCardIndex.current + 1],
+            cardScrollPositions.current[activeCardIndex.current],
             0
           )
+
+          cardOpacityUpdaters[activeCardIndex.current].update(true)
         }, snapDelay)
+        cardOpacityUpdaters[activeCardIndex.current].update(false)
         activeCardIndex.current++
         controllerIndexUpdater.current(activeCardIndex.current)
       } else if (
@@ -86,11 +99,15 @@ const Carousel: FC<Props> = (props) => {
         cardSnapPortBounds.current[activeCardIndex.current]
       ) {
         timeout = setTimeout(() => {
+          //in order to handle the potential edge case of the scroll value passing a boundary on the last frame of stopping
           carousel.scrollTo(
-            cardScrollPositions.current[activeCardIndex.current - 1],
+            cardScrollPositions.current[activeCardIndex.current],
             0
           )
+
+          cardOpacityUpdaters[activeCardIndex.current].update(true)
         }, snapDelay)
+        cardOpacityUpdaters[activeCardIndex.current].update(false)
         activeCardIndex.current--
         controllerIndexUpdater.current(activeCardIndex.current)
       } else {
@@ -99,17 +116,19 @@ const Carousel: FC<Props> = (props) => {
             cardScrollPositions.current[activeCardIndex.current],
             0
           )
+          cardOpacityUpdaters[activeCardIndex.current].update(true)
         }, snapDelay)
       }
     }
 
-    carousel.addEventListener("scroll", handleScroll)
+    carousel.addEventListener("scroll", handleSnap)
+    cardOpacityUpdaters[0].update(true)
 
     return () => {
-      carousel.removeEventListener("scroll", handleScroll)
+      carousel.removeEventListener("scroll", handleSnap)
       window.removeEventListener("resize", handleResize)
     }
-  }, [cards.length, screenWidth])
+  }, [props.cards.length, screenWidth, cardOpacityUpdaters])
 
   return (
     <div className="flex flex-col">
@@ -117,7 +136,7 @@ const Carousel: FC<Props> = (props) => {
         className="flex gap-x-[16px] tablet:gap-x-[32px] desktop:gap-x-[40px] overflow-x-auto scrollbar-hide scroll-smooth px-[calc(50vw-160px)] tablet:px-[calc(50vw-185px)] desktop:px-[calc(50vw-284px)]"
         ref={carouselRef}
       >
-        {cards.map((card, index) => (
+        {props.cards.map((card, index) => (
           <Card
             key={index}
             title={card.title}
@@ -125,11 +144,12 @@ const Carousel: FC<Props> = (props) => {
             name={card.name}
             rating={card.rating}
             date={card.date}
+            updater={cardOpacityUpdaters[index]}
           />
         ))}
       </div>
       <CarouselController
-        cardNumber={cards.length}
+        cardNumber={props.cards.length}
         selectedIndex={activeCardIndex.current}
         scrollCards={scrollCards}
         updater={controllerIndexUpdater}
