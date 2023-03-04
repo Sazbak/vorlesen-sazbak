@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { FC } from "react"
+import StarRater from "./starrater"
 
 type CardProps = {
   title: string
@@ -36,7 +37,7 @@ const Card: FC<CardProps> = (props) => {
       <div className="flex flex-col absolute bottom-0">
         <div className="flex">
           <div className="text-headline-s-600 mr-[8px]">{props.name}</div>
-          <div className="text-headline-s-600 mr-[8px]">{props.rating}</div>
+          <StarRater rating={props.rating} />
         </div>
         <div className="text-paragraph-s-400 mb-[24px]">{formattedDate}</div>
       </div>
